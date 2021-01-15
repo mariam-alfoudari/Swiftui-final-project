@@ -54,7 +54,6 @@
 		39E3C9AE25ACED8600FB85E6 = {
 			isa = PBXGroup;
 			children = (
-				39AD038C25B1C89B00B57CA3 /* Launch Screen.storyboard */,
 				39E3C9B925ACED8600FB85E6 /* book Store */,
 				39E3C9B825ACED8600FB85E6 /* Products */,
 			);
@@ -85,6 +84,7 @@
 		39E3C9C025ACED8700FB85E6 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				39AD038C25B1C89B00B57CA3 /* Launch Screen.storyboard */,
 				39E3C9C125ACED8700FB85E6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
