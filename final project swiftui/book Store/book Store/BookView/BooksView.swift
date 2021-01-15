@@ -9,12 +9,41 @@ import SwiftUI
 
 struct BooksView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    NavigationView {
+        List (BOOKS) { book in
+        NavigationLink(
+            destination: BooksDetailView(Book: book), label: {
+                BooksRow(BOOOK: book)
+            })
+
+        }
+    .navigationTitle("الكتب")
     }
+    .accentColor(.yellow)
+}
 }
 
 struct BooksView_Previews: PreviewProvider {
-    static var previews: some View {
-        BooksView()
+static var previews: some View {
+    BooksView()
+        .environment(\.layoutDirection, .rightToLeft)
+}
+}
+struct BooksRow: View {
+let BOOOK: BOOOK
+var body: some View{
+    HStack(alignment: .center){
+        Image(BOOOK.bookname)
+            .resizable()
+            .scaledToFit()
+            .frame(height: 100)
+            .clipShape(Rectangle())
+        VStack(alignment: .leading) {
+            Text(BOOOK.bookname)
+            .font(.largeTitle)
+            
+        }
     }
 }
+}
+

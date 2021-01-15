@@ -16,38 +16,42 @@ struct PaymentDetailView : View {
         VStack{
             
             HStack {
-                Text("الاسم")
+                Text("الاسم:")
                 Spacer()
-                Text(payment.name)
+                Text(verbatim: payment.name)
                 
             }
             HStack {
-                Text("العنوان")
+                Text("العنوان:")
                 Spacer()
                 Text("\(payment.address)")
             }
             HStack {
-                Text("رقم الهاتف")
+                Text("رقم الهاتف:")
                 Spacer()
-                Text(payment.number)
+                Text(verbatim: payment.number)
             }
             HStack {
-                Text("المبلغ")
+                Text("المبلغ:")
                 Spacer()
                 Text("\(payment.price)")
             }
             Spacer()
             Text(ButtonText).modifier(ColorChange(Color: color)).onTapGesture {
-                color = .green
+                color = .yellow
                 ButtonText = "تم الدفع"
             }
-        }.padding().navigationTitle("الفاتورة")
+        }.padding()
+        .navigationTitle("الفاتورة")
+        
     }
 }
 
 
+
 struct BillView_Previews: PreviewProvider {
     static var previews: some View {
-        PaymentDetailView(payment: Payment(name: "مريم", address: "bk: 1 st: 1 house: 1" , number: "12345678", price: 14))
+        PaymentDetailView(payment: Payment(name: "مريم", address: "bk: 1 st: 1 house: 1" , number: "12345678", price: 6))
+            .environment(\.layoutDirection, .rightToLeft)
     }
 }

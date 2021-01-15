@@ -13,7 +13,7 @@ struct ShopView: View {
         NavigationView{
             List{
                 Section {
-                    Text("مرحباً بك يمكنك اختيار الكتاب الذي المناسبة اعجبك ")
+                    Text(" يمكنك اختيار الكتاب الذي اعجبك ")
                         .font(.headline)
                         .foregroundColor(.black)
                     
@@ -33,7 +33,7 @@ struct ShopView: View {
             }
             .navigationTitle(" شراء الكتب")
         }
-        
+        .accentColor(.yellow)
         
     }
 }
@@ -61,11 +61,11 @@ struct BookRow: View {
     let Book : Book
     var body: some View{
         HStack(alignment: .center){
-            Text(Book.numbers)
+            Text(Book.price)
                 .font(.subheadline)
                 .foregroundColor(.white)
                 .padding()
-                .background(Color.blue)
+                .background(Color.yellow)
                 .clipShape(Circle())
             Image(Book.book)
                 .resizable()

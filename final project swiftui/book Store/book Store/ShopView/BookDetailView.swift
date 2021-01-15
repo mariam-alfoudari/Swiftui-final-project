@@ -22,7 +22,7 @@ struct BookDetailView: View {
                     .resizable()
                     .scaledToFit()
             VStack{
-        TextField("اسم المستلم ", text: $name)
+        TextField("اسم المشتري ", text: $name)
             .foregroundColor(.black)
         TextField("الهاتف ", text: $number)
         TextField("العنوان  ", text: $Address)
@@ -30,7 +30,7 @@ struct BookDetailView: View {
             }
         
             HStack{
-                    Stepper("", value: $AmountOfBk).labelsHidden()
+                    Stepper("", value: $AmountOfBk, in: 0...10).labelsHidden()
                     
                     Spacer()
                     Text("عدد الكتب \(AmountOfBk)")
@@ -46,7 +46,7 @@ struct BookDetailView: View {
                     NavigationLink(
                         destination: PaymentDetailView(payment: Payment(name: name, address: Address, number: number, price: PaymentPrice(amountOfBk: AmountOfBk, price: price))),
                         label: {
-                            Text("اضغط للمتابعة").modifier(ColorChange(Color: .blue))
+                            Text("صفحة الدفع").modifier(ColorChange(Color: .blue))
                         })
                 }
             }.padding(.all, 15.0)
@@ -58,6 +58,7 @@ struct BookDetailView: View {
         
         return thePaymentPrice
     }
+    
     }
 
 struct BookDetailView_Previews: PreviewProvider {

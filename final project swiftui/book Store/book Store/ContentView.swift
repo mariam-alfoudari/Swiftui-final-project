@@ -14,7 +14,7 @@ struct ContentView: View {
                 .tabItem {
                     VStack {
                         Image(systemName: "book.closed")
-                        Text("know books")
+                        Text("تعرف على الكتب")
                     }
             }.tag(1)
             
@@ -23,15 +23,17 @@ struct ContentView: View {
                 .tabItem {
                     VStack {
                         Image(systemName: "cart")
-                        Text("buy books")
+                        Text("اشتر الكتب التـى اعجبتك")
                     }
             }.tag(2)
         }
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environment(\.layoutDirection, .rightToLeft)
     }
 }
